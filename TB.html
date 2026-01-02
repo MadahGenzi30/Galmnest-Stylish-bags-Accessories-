@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendy Backpack</title>
+  <link rel="stylesheet" href="Products.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Galmnest</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+         <li>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">
+            🛒
+            <span id="cart-count">0</span>
+            </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="product-details">
+  <div class="container product-details-container">
+
+    <!-- Product Images with Arrows -->
+    <div class="product-images">
+      <div class="image-slider">
+        <span class="arrow prev">&#10094;</span>
+        <img src="images/bag7.jfif" alt="Trendy Backpack" class="main-image">
+        <span class="arrow next">&#10095;</span>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="other-images">
+        <img src="images/bag7.jfif" alt="Trendy Backpack">
+        <img src="images/bag71.jpg" alt="Trendy Backpack">
+        <img src="images/bag72.webp" alt="Trendy Backpack">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2>Trendy Backpack</h2>
+      <p>$49.99</p>
+      <p>The Trendy Backpack combines practicality with fashion-forward design. With multiple compartments, comfortable straps, and durable materials, it’s perfect for school, work, or weekend trips. Its stylish aesthetic ensures you carry your essentials in both comfort and style.</p>
+
+      <button class="btn" onclick="addToCart('Trendy Backpack', 49.99, 'images/bag7.jfif')">Add to Cart</button>
+<button class="btn" onclick="window.location.href='checkout.html'">
+        Checkout
+      </button>
+    </div>
+
+  </div>
+</section>
+    <script src="script.js"></script>
+<script>
+  // Initialize cart from localStorage or empty array
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function addToCart(name, price, image) {
+    // Add product to cart array
+    cart.push({ name, price, image });
+    
+    // Save updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count on page
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
+
+    // Optional: alert user
+    alert(`${name} added to cart!`);
+  }
+
+  // On page load, update cart count
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "images/bag7.jfif",
+    "images/bag71.jpg",
+    "images/bag72.webp"
+  ];
+
+  let currentIndex = 0;
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".other-images img");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function updateImage(index) {
+    currentIndex = index;
+    mainImage.src = images[currentIndex];
+  }
+
+  // Thumbnail click
+  thumbnails.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      updateImage(index);
+    });
+  });
+
+  // Next arrow
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage(currentIndex);
+  });
+
+  // Previous arrow
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage(currentIndex);
+  });
+});
+</script>
+
+
+</body>
+</html>

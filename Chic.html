@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chic French Bag</title>
+  <link rel="stylesheet" href="Products.css"> <!-- Your main CSS -->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Galmnest</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+         <li>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">
+            🛒
+            <span id="cart-count">0</span>
+            </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="product-details">
+  <div class="container product-details-container">
+
+    <!-- Product Images -->
+    <div class="product-images">
+
+      <!-- MAIN IMAGE WITH ARROWS -->
+      <div class="image-slider">
+        <span class="arrow prev">&#10094;</span>
+        <img src="images/bag2.jfif" alt="Chic French Bag" class="main-image">
+        <span class="arrow next">&#10095;</span>
+      </div>
+
+      <!-- THUMBNAILS -->
+      <div class="other-images">
+        <img src="images/bag2.jfif" alt="Chic French Bag">
+        <img src="images/bag22.webp" alt="Chic French Bag">
+        <img src="images/bag23.jpg" alt="Chic French Bag">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2>Chic French Bag</h2>
+      <p>$49.99</p>
+      <p>Elevate your look with the Chic French Bag. Featuring a refined silhouette, durable materials, and stylish accents, this bag embodies Parisian elegance. Perfect for brunches, work meetings, or strolls around town, it’s a fashionable choice for those who appreciate subtle luxury.</p>
+
+      <!-- Corrected Add to Cart Button -->
+      <button class="btn" 
+          onclick="addToCart('Chic French Bag', 49.99, 'images/bag2.jfif')">
+          Add to Cart
+      </button>
+<button class="btn" onclick="window.location.href='checkout.html'">
+        Checkout
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Cart functionality script -->
+<script>
+  // Initialize cart from localStorage or empty array
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function addToCart(name, price, image) {
+    cart.push({ name, price, image });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart-count').textContent = cart.length;
+    alert(`${name} added to cart!`);
+  }
+
+  // Update cart count on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('cart-count').textContent = cart.length;
+  });
+</script>
+
+<!-- Image slider functionality script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "images/bag2.jfif",
+    "images/bag22.webp",
+    "images/bag23.jpg"
+  ];
+
+  let currentIndex = 0;
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".other-images img");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function updateImage(index) {
+    currentIndex = index;
+    mainImage.src = images[currentIndex];
+  }
+
+  // Thumbnail click
+  thumbnails.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      updateImage(index);
+    });
+  });
+
+  // Next arrow
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage(currentIndex);
+  });
+
+  // Previous arrow
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage(currentIndex);
+  });
+});
+</script>
+
+</body>
+</html>

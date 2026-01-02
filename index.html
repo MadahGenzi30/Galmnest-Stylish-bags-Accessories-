@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamNest - Stylish Bags & Accessories</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo\logo.png">
+    <link rel="apple-touch-icon" href="logo\logo.png">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>GlamNest &#10024;</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button class="cart-btn" onclick="window.location.href='cart.html'">
+                            🛒
+                            <span id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <img class="slide" src="images/bag2.jfif" alt="Bag 2">
+                <img class="slide" src="images/bag3.jfif" alt="Bag 3">
+                <img class="slide" src="images/bag4.jfif" alt="Bag 4">
+                <img class="slide" src="images/bag5.jfif" alt="Bag 5">
+                <img class="slide" src="images/bag6.jfif" alt="Bag 6">
+                <img class="slide" src="images/bag7.jfif" alt="Bag 7">
+                <img class="slide" src="images/bag8.jpeg" alt="Bag 8">
+                <img class="slide" src="images/bag9.avif" alt="Bag 9">
+                <img class="slide" src="images/bag10.avif" alt="Bag 10">
+            </div>
+
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+
+        <div class="hero-text">
+            <h2>Welcome to GlamNest</h2>
+            <p>Your ultimate destination for stylish bags and trendy accessories.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About GlamNest</h2>
+            <p>
+                Welcome to <strong>GlamNest</strong>, a premium fashion brand dedicated to
+                bringing you stylish and high-quality bags and accessories.
+            </p>
+            <p>
+                Our mission is to combine glamour and practicality, creating accessories
+                that empower individuals to express their style confidently.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+
+            <div class="product-grid">
+
+                <!-- Product 1: Classic Tote -->
+                <div class="product-card" onclick="window.location.href='ClassicTote.html'">
+                    <img src="images/bag1.jfif" alt="Classic Tote">
+                    <h3>Classic Tote</h3>
+                    <p>$45</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 2: Chic French Bag (video) -->
+                <div class="product-card" onclick="window.location.href='Chic.html'">
+                    <div class="media-frame">
+                        <img src="images/bag2.jfif" class="video-poster" alt="Chic French Bag">
+                        <video class="auto-video" src="videos/vid6.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Chic French Bag</h3>
+                    <p>$50</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 3: Evening Clutch -->
+                <div class="product-card" onclick="window.location.href='eclutch.html'">
+                    <img src="images/bag3.jfif" alt="Evening Clutch">
+                    <h3>Evening Clutch</h3>
+                    <p>$35</p>
+                    <button onclick="addToCart('Evening Clutch', 35, 'images/bag3.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 4: Tote Bag (video) -->
+                <div class="product-card" onclick="window.location.href='Tote.html'">
+                    <div class="media-frame">
+                        <img src="images/bag4.jfif" class="video-poster" alt="Tote Bag">
+                        <video class="auto-video" src="videos/vid5.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Tote Bag</h3>
+                    <p>$47</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 5: Classy Shoulder Bag -->
+                <div class="product-card" onclick="window.location.href='CS.html'">
+                    <img src="images/bag5.jfif" alt="Classy Shoulder Bag">
+                    <h3>Classy Shoulder Bag</h3>
+                    <p>$60</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 6: Trendy Clutch (video) -->
+                <div class="product-card" onclick="window.location.href='Tclutch.html'">
+                    <div class="media-frame">
+                        <img src="images/bag6.jfif" class="video-poster" alt="Trendy Clutch">
+                        <video class="auto-video" src="videos/vid4.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Trendy Clutch</h3>
+                    <p>$85</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 7: Trendy Backpack -->
+                <div class="product-card" onclick="window.location.href='TB.html'">
+                    <img src="images/bag7.jfif" alt="Trendy Backpack">
+                    <h3>Trendy Backpack</h3>
+                    <p>$70</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 8: Flap Shoulder Bag (video) -->
+                <div class="product-card" onclick="window.location.href='FS.html'">
+                    <div class="media-frame">
+                        <img src="images/bag8.jpeg" class="video-poster" alt="Flap Shoulder Bag">
+                        <video class="auto-video" src="videos/vid3.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Flap Shoulder Bag</h3>
+                    <p>$55</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                   
+                </div>
+
+                <!-- Product 9: Gold Mini Clutch (video) -->
+                <div class="product-card" onclick="window.location.href='GM.html'">
+                    <div class="media-frame">
+                        <img src="images/bag9.avif" class="video-poster" alt="Gold Mini Clutch">
+                        <video class="auto-video" src="videos/vid1.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Gold Mini Clutch</h3>
+                    <p>$65</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+                <!-- Product 10: Rossey White (video) -->
+                <div class="product-card" onclick="window.location.href='RW.html'">
+                    <div class="media-frame">
+                        <img src="images/bag10.avif" class="video-poster" alt="Rossey White">
+                        <video class="auto-video" src="videos/vid2.mp4" muted playsinline preload="none"></video>
+                    </div>
+                    <h3>Rossey White</h3>
+                    <p>$40</p>
+                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get updates on new products and special offers!</p>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to place an order? Fill out the form below.</p>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Email: <a href="mailto:info@glamnest.com">info@glamnest.com</a></p>
+            <p>Phone: +92 300 1234567</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GlamNest. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll(".media-frame").forEach(frame => {
+            const poster = frame.querySelector(".video-poster");
+            const video = frame.querySelector(".auto-video");
+            video.pause();
+            video.currentTime = 0;
+            frame.addEventListener("mouseenter", () => {
+                poster.style.display = "none";
+                video.currentTime = 0;
+                video.play();
+            });
+            frame.addEventListener("mouseleave", () => {
+                video.pause();
+                video.currentTime = 0;
+                poster.style.display = "block";
+            });
+        });
+    </script>
+
+</body>
+</html>

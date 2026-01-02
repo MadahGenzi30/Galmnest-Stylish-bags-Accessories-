@@ -1,0 +1,188 @@
+/* ==============================
+   CART & CHECKOUT – GLAMNEST THEME
+   Matches style.css (Pink / Beige)
+   ============================== */
+/* ==============================
+   CART BUTTON (HEADER / NAV)
+   ============================== */
+
+.cart-btn {
+    position: relative;
+    background-color: #b76e79;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Cart count bubble */
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: #4a2c2a; /* brown */
+    color: #fff;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+}
+
+/* Body */
+body {
+    background-color: #f8f1ea; /* same beige */
+    color: #4a2c2a;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+/* Header */
+header {
+    background-color: #f3c6c6; /* soft pink */
+    padding: 25px 0;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #4a2c2a;
+}
+
+header a {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #b76e79;
+    font-size: 14px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   CART PAGE
+   ============================== */
+
+#cartItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #fde2e4;
+}
+
+.product-card h3 {
+    margin: 12px 0 5px;
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #b76e79;
+}
+
+/* Buttons */
+button {
+    background-color: #b76e79;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9c4f5a;
+}
+
+/* Total */
+#total {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ==============================
+   CHECKOUT PAGE
+   ============================== */
+
+form {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fde2e4; /* light pink */
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #b76e79;
+}
+
+/* Success Message */
+#success {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #4a7c59;
+    text-align: center;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tote Bag</title>
+  <link rel="stylesheet" href="Products.css"> <!-- Your main CSS -->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Galmnest</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+         <li>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">
+            🛒
+            <span id="cart-count">0</span>
+            </button>
+        </li>
+    </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="product-details">
+  <div class="container product-details-container">
+
+    <!-- Product Images -->
+    <div class="product-images">
+      <div class="image-slider">
+        <span class="arrow prev">&#10094;</span>
+        <img src="images/bag4.jfif" alt="Tote Bag" class="main-image">
+        <span class="arrow next">&#10095;</span>
+      </div>
+      <div class="other-images">
+        <img src="images/bag4.jfif" alt="Tote Bag">
+        <img src="images/bag41.webp" alt="Tote Bag">
+        <img src="images/bag42.webp" alt="Tote Bag">
+        <img src="images/bag43.jpg" alt="Tote Bag">
+        <img src="images/bag44.jpg" alt="Tote Bag">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2>Tote Bag</h2>
+      <p>$49.99</p>
+      <p>The Tote Bag is your everyday companion, combining utility with elegance. Crafted with durable, lightweight materials and ample storage space, it’s perfect for work, shopping, or travel. Its sophisticated design and soft beige finish make it versatile and fashionable for any occasion.</p>
+
+<button class="btn" onclick="addToCart('Tote Bag', 49.99, 'images/bag4.jfif')">Add to Cart</button>
+<button class="btn" onclick="window.location.href='checkout.html'">
+        Checkout
+      </button>
+    </div>
+
+  </div>
+</section>
+<script src="script.js"></script>
+<script>
+  // Initialize cart from localStorage or empty array
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function addToCart(name, price, image) {
+    // Add product to cart array
+    cart.push({ name, price, image });
+    
+    // Save updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count on page
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
+
+    // Optional: alert user
+    alert(`${name} added to cart!`);
+  }
+
+  // On page load, update cart count
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = cart.length;
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+ const images = [
+    "images/bag4.jfif",
+    "images/bag41.webp",
+    "images/bag42.webp",
+    "images/bag43.jpg",
+    "images/bag44.jpg"
+];
+
+
+  let currentIndex = 0;
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".other-images img");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function updateImage(index) {
+    currentIndex = index;
+    mainImage.src = images[currentIndex];
+  }
+
+  // Thumbnail click
+  thumbnails.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      updateImage(index);
+    });
+  });
+
+  // Next arrow
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage(currentIndex);
+  });
+
+  // Previous arrow
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage(currentIndex);
+  });
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - GlamNest</title>
+    <link rel="stylesheet" href="cart-checkout.css">
+
+</head>
+<body>
+
+<header class="container">
+    <h1>Checkout</h1>
+</header>
+
+<section class="container">
+    <form onsubmit="placeOrder(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Address" required>
+        <input type="text" placeholder="City" required>
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <p id="success"></p>
+</section>
+
+<script src="checkout.js"></script>
+
+
+</body>
+</html>
