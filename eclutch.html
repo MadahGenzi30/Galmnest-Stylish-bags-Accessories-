@@ -44,24 +44,20 @@
       </div>
     </div>
 
-    <!-- Product Info -->
-    <div class="product-info">
-      <h2>Evening Clutch</h2>
-      <p>$49.99</p>
-      <p>The Evening Clutch is designed to add sparkle to your night-out ensemble. With a sleek finish, compact design, and luxurious details, it holds essentials without compromising style. Ideal for weddings, parties, and elegant dinners, it’s the ultimate accessory for sophisticated evenings.</p>
-
-      <button class="btn"
-        onclick="addToCart('Evening Clutch', 49.99, 'images/bag3.jfif')">
-        Add to Cart
-      </button>
-      <button class="btn" onclick="window.location.href='checkout.html'">
-        Checkout
-      </button>
-    </div>
-
+   <div class="product-info">
+  <h2>Evening Clutch</h2>
+  <p class="price">$49.99</p>
+  <ul class="product-features">
+    <li>Sleek and compact design</li>
+    <li>Luxurious detailing for elegance</li>
+    <li>Holds essentials without compromising style</li>
+    <li>Perfect for weddings, parties, and dinners</li>
+    <li>Ultimate accessory for sophisticated evenings</li>
+  </ul>
+    <button class="btn" onclick="addToCart('Evening Clutch', 49.99, 'images/bag3.jfif')">Add to Cart</button>
+    <button class="btn" onclick="window.location.href='checkout.html'">Checkout</button>
   </div>
 </section>
-
 <script src="script.js"></script>
 <script>
   // Initialize cart from localStorage or empty array
@@ -135,3 +131,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
