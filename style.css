@@ -15,17 +15,24 @@ body {
     line-height: 1.6;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* Container */
 .container {
-    width: 90%;
     max-width: 1200px;
+    width: 100%;
     margin: auto;
+    padding: 0 16px;
 }
+
 
 /* Header */
 header {
     background-color: #f3c6c6; /* soft pink */
-    padding: 20px 0;
+    padding: 20px;
 }
 
 header h1 {
@@ -34,11 +41,15 @@ header h1 {
 }
 
 /* Navigation */
+
+
 nav ul {
-     list-style: none;
     display: flex;
-    align-items: center; /* Vertical alignment */
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    justify-content: center;
+    list-style: none;
 }
 
 nav a {
@@ -68,6 +79,7 @@ header .container {
     padding: 60px 20px;
     text-align: center;
 }
+
 
 .hero-text h2 {
     font-size: 36px;
