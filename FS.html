@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flap Shoulder Bag</title>
   <link rel="stylesheet" href="Products.css">
+  <link rel="icon" type="image/png" href="logo\logo.png">
+  <link rel="apple-touch-icon" href="logo\logo.png">
 </head>
 <body>
 
@@ -49,20 +51,21 @@
     </div>
 
     <!-- Product Info -->
-    <div class="product-info">
-      <h2>Flap Shoulder Bag</h2>
-      <p>$49.99</p>
-      <p>The Flap Shoulder Bag offers effortless elegance with a practical twist. Designed with premium textures, a secure flap closure, and an adjustable strap, it’s perfect for everyday use or special occasions. Its subtle sophistication complements any outfit with style and grace.</p>
-
-      <!-- Buttons -->
-<button class="btn" onclick="addToCart('Flap Shoulder Bag', 49.99, 'images/bag8.jfif')">Add to Cart</button>
-<button class="btn" onclick="window.location.href='checkout.html'">
-        Checkout
-      </button>
-    </div>
-
+ <div class="product-info">
+  <h2>Flap Shoulder Bag</h2>
+  <p class="price">$49.99</p>
+  <ul class="product-features">
+    <li>Premium textured materials</li>
+    <li>Secure flap closure</li>
+    <li>Adjustable strap for comfort</li>
+    <li>Suitable for everyday use or special occasions</li>
+    <li>Subtle sophistication complements any outfit</li>
+  </ul>
+    <button class="btn" onclick="addToCart('Flap Shoulder Bag', 49.99, 'images/bag8.jfif')">Add to Cart</button>
+    <button class="btn" onclick="window.location.href='checkout.html'">Checkout</button>
   </div>
-</section>
+
+   </section>
     <script src="script.js"></script>
 <script>
   // Initialize cart from localStorage or empty array
