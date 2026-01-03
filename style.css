@@ -1,5 +1,5 @@
 /* ==============================
-   GLOBAL RESET & FIXES
+   GLOBAL STYLES
    ============================== */
 * {
     margin: 0;
@@ -8,35 +8,24 @@
     font-family: 'Poppins', sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
 }
 
-/* IMPORTANT MOBILE FIX */
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
 /* Body */
 body {
-    background-color: #f8f1ea;
+    background-color: #f8f1ea; /* beige */
     color: #4a2c2a;
     line-height: 1.6;
 }
 
-/* ==============================
-   CONTAINER
-   ============================== */
+/* Container */
 .container {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 16px;
 }
 
-/* ==============================
-   HEADER
-   ============================== */
+/* Header */
 header {
-    background-color: #f3c6c6;
-    padding: 15px 0;
+    background-color: #f3c6c6; /* soft pink */
+    padding: 20px 0;
 }
 
 header h1 {
@@ -44,25 +33,16 @@ header h1 {
     font-size: 32px;
 }
 
-/* Header layout */
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* MOBILE FIX */
-}
-
 /* Navigation */
 nav ul {
-    list-style: none;
+     list-style: none;
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertical alignment */
     gap: 30px;
-    flex-wrap: wrap; /* MOBILE FIX */
 }
 
 nav a {
-    text-decoration: none;
+     text-decoration: none;
     color: #4a2c2a;
     font-weight: 500;
     font-size: 18px;
@@ -73,12 +53,19 @@ nav a:hover {
     color: #b76e79;
 }
 
+/* Header layout */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* ==============================
    HERO SECTION
    ============================== */
 .hero {
     background-color: #fde2e4;
-    padding: 50px 15px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -91,32 +78,31 @@ nav a:hover {
     font-size: 18px;
 }
 
-/* ==============================
-   SLIDESHOW
-   ============================== */
+/* HERO SLIDESHOW */
 .slideshow-container {
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     height: 420px;
-    margin: 0 auto 25px;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 20px;
 }
 
 .slides-wrapper {
     display: flex;
+    width: 100%;
     height: 100%;
     transition: transform 0.7s ease-in-out;
 }
 
-.slide {
+.slides-wrapper .slide {
     min-width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Arrows */
+/* HERO SLIDESHOW ARROWS */
 .slideshow-container .prev,
 .slideshow-container .next {
     position: absolute;
@@ -129,12 +115,95 @@ nav a:hover {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
+    user-select: none;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.slideshow-container .prev { left: 10px; }
-.slideshow-container .next { right: 10px; }
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slideshow-container .prev { left: 15px; }
+.slideshow-container .next { right: 15px; }
+
+/* Responsive adjustments for arrows */
+@media screen and (max-width: 768px) {
+    .slideshow-container .prev,
+    .slideshow-container .next {
+        font-size: 20px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slideshow-container .prev,
+    .slideshow-container .next {
+        font-size: 18px;
+        padding: 6px;
+    }
+}
+
+.media-frame {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    border: 2px solid #fde2e4;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.media-frame:hover {
+    transform: scale(1.05);
+    border-color: #f3c6c6;
+}
+
+/* Images and videos inside frame */
+.media-frame img,
+.media-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+/* Poster on top */
+.video-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Video underneath */
+.auto-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Hover effect to hide poster and reveal video */
+.media-frame:hover .video-poster {
+    opacity: 0;
+}
+/* ==============================
+   MEDIA FRAME (IMAGE + VIDEO)
+   ============================== */
+
 
 /* ==============================
    SECTIONS
@@ -156,9 +225,7 @@ section h2 {
     margin: 10px auto;
 }
 
-/* ==============================
-   PRODUCTS
-   ============================== */
+/* Products */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -176,52 +243,74 @@ section h2 {
 }
 
 .product-card:hover {
-    transform: translateY(-6px); /* reduced to avoid overflow */
+    transform: translateY(-8px);
 }
 
 .product-card img {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 2px solid #fde2e4;
-}
-
-/* ==============================
-   IMAGE + VIDEO FRAME
-   ============================== */
-.media-frame {
-    position: relative;
-    width: 100%;
     height: 300px;
-    border-radius: 15px;
-    border: 2px solid #fde2e4;
-    overflow: hidden;
-}
-
-.media-frame img,
-.media-frame video {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    border: 2px solid #fde2e4;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.video-poster {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+.product-card img:hover {
+    transform: scale(1.05);
+    border-color: #f3c6c6;
 }
 
-.auto-video {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+.product-card h3 {
+    margin: 15px 0 5px;
 }
 
-/* ==============================
-   BUTTONS
-   ============================== */
+.product-card p {
+    font-weight: bold;
+    color: #b76e79;
+}
+.cart-button{
+ display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #b07d83; /* Muted dark pink/brown from image */
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px; /* Makes it a pill shape */
+    border: 1.5px solid #222; /* Dark border outline */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* The drop shadow from pic */
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cart-button:hover {
+    background-color: #9c686f;
+    transform: translateY(-2px);
+}
+
+.cart-button i, .cart-icon {
+    font-size: 18px;
+}
+
+.cart-count {
+    font-size: 16px;
+}
+
+.cart-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Main cart box */
+.cart-box {
+    background-color: #fff;
+    width: 100%;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 button {
     background-color: #b76e79;
     color: white;
@@ -235,10 +324,7 @@ button {
 button:hover {
     background-color: #9c4f5a;
 }
-
-/* ==============================
-   NEWSLETTER
-   ============================== */
+/* Newsletter */
 #newsletter {
     background-color: #fde2e4;
     text-align: center;
@@ -249,11 +335,10 @@ button:hover {
     width: 250px;
     border-radius: 20px;
     border: 1px solid #ccc;
+    margin-right: 10px;
 }
 
-/* ==============================
-   CONTACT
-   ============================== */
+/* Contact */
 #contact form {
     max-width: 500px;
     margin: auto;
@@ -274,48 +359,107 @@ button:hover {
     height: 120px;
 }
 
-/* ==============================
-   FOOTER
-   ============================== */
+/* ===== PROFESSIONAL FOOTER ===== */
+/* ===== PROFESSIONAL FOOTER ===== */
+
 .site-footer {
     background-color: #2e1b18;
     color: #f5e9e2;
-    padding: 40px 20px;
+    padding: 60px 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    color: #ffb7a5;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #f5e9e2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffb7a5;
+}
+
+.footer-column a {
+    color: #ffb7a5;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: #241310;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffb7a5;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ffb7a5;
+    color: #2e1b18;
+    transform: translateY(-3px);
+}
+
+/* Bottom bar */
+.footer-bottom {
+    margin-top: 40px;
+    padding: 15px 0;
     text-align: center;
+    background-color: #241310;
+    font-size: 13px;
+}
+small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
 }
 
-/* ==============================
-   MOBILE RESPONSIVE FIX
-   ============================== */
-@media (max-width: 768px) {
-
-    nav ul {
-        justify-content: center;
-        gap: 15px;
-    }
-
-    header h1 {
-        font-size: 26px;
-    }
-
-    .hero-text h2 {
-        font-size: 24px;
-    }
-
-    .hero-text p {
-        font-size: 15px;
-    }
-
-    .slideshow-container {
-        height: 280px;
-    }
-
-    .slide {
-        height: 280px;
-    }
-
-    section {
-        padding: 40px 0;
-    }
+#newsletter-message,
+#contact-feedback {
+    margin-top: 10px;
+    font-size: 14px;
 }
-
