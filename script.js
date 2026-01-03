@@ -106,3 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
         startSlideShow();
     }
 });
+// ===== Contact Message 5 Character Alert =====
+const contactMessage = document.getElementById("contact-message");
+
+contactMessage.addEventListener("input", () => {
+    if (contactMessage.value.length >= 5) {
+        alert("⚠️ You cannot enter more than 5 characters in this field.");
+    }
+});
+
