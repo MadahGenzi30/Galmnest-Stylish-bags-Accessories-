@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tote Bag</title>
   <link rel="stylesheet" href="Products.css"> <!-- Your main CSS -->
+  <link rel="icon" type="image/png" href="logo\logo.png">
+  <link rel="apple-touch-icon" href="logo\logo.png">
 </head>
 <body>
 
@@ -45,18 +47,22 @@
     </div>
 
     <!-- Product Info -->
-    <div class="product-info">
-      <h2>Tote Bag</h2>
-      <p>$49.99</p>
-      <p>The Tote Bag is your everyday companion, combining utility with elegance. Crafted with durable, lightweight materials and ample storage space, it’s perfect for work, shopping, or travel. Its sophisticated design and soft beige finish make it versatile and fashionable for any occasion.</p>
-
-<button class="btn" onclick="addToCart('Tote Bag', 49.99, 'images/bag4.jfif')">Add to Cart</button>
-<button class="btn" onclick="window.location.href='checkout.html'">
-        Checkout
-      </button>
-    </div>
-
+    <!-- Product Info + Buttons: Tote Bag -->
+<div class="product-info">
+  <h2>Tote Bag</h2>
+  <p class="price">$49.99</p>
+  <ul class="product-features">
+    <li>Durable and lightweight materials</li>
+    <li>Ample storage space for daily needs</li>
+    <li>Elegant design for work or travel</li>
+    <li>Soft beige finish for versatile styling</li>
+    <li>Perfect combination of utility and elegance</li>
+  </ul>
+ 
+    <button class="btn" onclick="addToCart('Tote Bag', 49.99, 'images/bag4.jfif')">Add to Cart</button>
+    <button class="btn" onclick="window.location.href='checkout.html'">Checkout</button>
   </div>
+
 </section>
 <script src="script.js"></script>
 <script>
