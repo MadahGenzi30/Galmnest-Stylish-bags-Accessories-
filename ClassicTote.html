@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Tote</title>
   <link rel="stylesheet" href="Products.css">
+  <link rel="icon" type="image/png" href="logo\logo.png">
+  <link rel="apple-touch-icon" href="logo\logo.png">
 </head>
 <body>
 
@@ -49,22 +51,20 @@
     </div>
 
     <!-- Product Info -->
-    <div class="product-info">
-      <h2>Classic Tote</h2>
-      <p>$49.99</p>
-      <p>Classic Tote Bag embodies timeless elegance with practical design. Its sturdy build, roomy interior, and sleek handles make it ideal for daily use. Perfectly blending fashion and functionality, it’s a reliable accessory for the modern individual who values style and convenience.
-      </p>
-
-      <button class="btn"
-        onclick="addToCart('Classic Tote', 49.99, 'images/bag1.jfif')">
-        Add to Cart
-      </button>
-<button class="btn" onclick="window.location.href='checkout.html'">
-        Checkout
-      </button>
-    </div>
-
+   <div class="product-info">
+  <h2>Classic Tote</h2>
+  <p class="price">$49.99</p>
+  <ul class="product-features">
+    <li>Timeless and practical design</li>
+    <li>Sturdy build with roomy interior</li>
+    <li>Sleek handles for easy carrying</li>
+    <li>Blends fashion with functionality</li>
+    <li>Reliable accessory for daily use</li>
+  </ul>
+    <button class="btn" onclick="addToCart('Classic Tote', 49.99, 'images/bag1.jfif')">Add to Cart</button>
+    <button class="btn" onclick="window.location.href='checkout.html'">Checkout</button>
   </div>
+
 </section>
   <script src="script.js"></script>
   <script>
