@@ -22,7 +22,8 @@ function updateCartCount() {
 }
 
 // Add product to cart
-function addToCart(name, price, image) {
+function addToCart(event, name, price, image) {
+  event.stopPropagation();
     let cart = getCart();
 
     cart.push({
@@ -105,6 +106,23 @@ document.addEventListener("DOMContentLoaded", () => {
         goToSlide(0);
         startSlideShow();
     }
+})
+ document.querySelectorAll(".media-frame").forEach(frame => {
+const poster = frame.querySelector(".video-poster");
+const video = frame.querySelector(".auto-video");
+video.pause();
+video.currentTime = 0;
+frame.addEventListener("mouseenter", () => {
+    poster.style.display = "none";
+    video.currentTime = 0;
+    video.play();
+});
+frame.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+    poster.style.display = "block";
+});
+
 });
 // ===== Contact Message 5 Character Alert =====
 const contactMessage = document.getElementById("contact-message");
@@ -114,4 +132,26 @@ contactMessage.addEventListener("input", () => {
         alert("⚠️ You cannot enter more than 5 characters in this field.");
     }
 });
+
+// ===== Contact Name 5 Character Alert =====
+const contactName = document.getElementById("contact-name");
+
+contactName.addEventListener("input", () => {
+    if (contactName.value.length >= 5) {
+        alert("⚠️ You cannot enter more than 5 characters in this field.");
+    }
+});
+
+// ===== Contact Email 10 Character Alert =====
+const contactEmail = document.getElementById("contact-email");
+
+contactEmail.addEventListener("input", () => {
+    if (contactEmail.value.length >= 10) {
+        alert("⚠️ You cannot enter more than 10 characters in this field.");
+    }
+});
+
+
+
+
 
