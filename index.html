@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlamNest - Stylish Bags & Accessories</title>
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="logo/logo.png">
     <link rel="apple-touch-icon" href="logo/logo.png">
 </head>
@@ -83,7 +82,7 @@
                     <img src="images/bag1.jfif" alt="Classic Tote">
                     <h3>Classic Tote</h3>
                     <p>$45</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart(event, 'Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 2: Chic French Bag (video) -->
@@ -94,7 +93,7 @@
                     </div>
                     <h3>Chic French Bag</h3>
                     <p>$50</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Chic French Bag', 50, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 3: Evening Clutch -->
@@ -113,7 +112,7 @@
                     </div>
                     <h3>Tote Bag</h3>
                     <p>$47</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Tote Bag', 47, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 5: Classy Shoulder Bag -->
@@ -121,7 +120,7 @@
                     <img src="images/bag5.jfif" alt="Classy Shoulder Bag">
                     <h3>Classy Shoulder Bag</h3>
                     <p>$60</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Classy Shoulder Bag', 60, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 6: Trendy Clutch (video) -->
@@ -132,7 +131,7 @@
                     </div>
                     <h3>Trendy Clutch</h3>
                     <p>$85</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Trendy Clutch', 85, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 7: Trendy Backpack -->
@@ -140,7 +139,7 @@
                     <img src="images/bag7.jfif" alt="Trendy Backpack">
                     <h3>Trendy Backpack</h3>
                     <p>$70</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Trendy Backpack', 70, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 8: Flap Shoulder Bag (video) -->
@@ -151,7 +150,7 @@
                     </div>
                     <h3>Flap Shoulder Bag</h3>
                     <p>$55</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Flap Shoulder Bag', 55, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 9: Gold Mini Clutch (video) -->
@@ -162,7 +161,7 @@
                     </div>
                     <h3>Gold Mini Clutch</h3>
                     <p>$65</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Gold Mini Clutch', 65, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
                 <!-- Product 10: Rossey White (video) -->
@@ -173,7 +172,7 @@
                     </div>
                     <h3>Rossey White</h3>
                     <p>$40</p>
-                    <button onclick="addToCart('Classic Tote', 45, 'images/bag1.jfif')">Add to Cart</button>
+                    <button onclick="addToCart('Rossey White', 40, 'images/bag1.jfif')">Add to Cart</button>
                 </div>
 
             </div>
@@ -215,13 +214,15 @@
                     maxlength="5"
                     required
                 ></textarea>
+                <small id="char-count">0 / 5 characters</small>
+
                 <button type="submit">Send Message</button>
             </form>
             <p id="contact-feedback"></p>
         </div>
     </section>
 
-    <!-- Footer Section -->
+     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-container">
 
@@ -275,24 +276,7 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script>
-        document.querySelectorAll(".media-frame").forEach(frame => {
-            const poster = frame.querySelector(".video-poster");
-            const video = frame.querySelector(".auto-video");
-            video.pause();
-            video.currentTime = 0;
-            frame.addEventListener("mouseenter", () => {
-                poster.style.display = "none";
-                video.currentTime = 0;
-                video.play();
-            });
-            frame.addEventListener("mouseleave", () => {
-                video.pause();
-                video.currentTime = 0;
-                poster.style.display = "block";
-            });
-        });
-    </script>
-
+      
 </body>
 </html>
+
